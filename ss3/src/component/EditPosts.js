@@ -5,15 +5,17 @@ import * as postsService from "../service/postsService";
 import * as Yup from "yup";
 
 export function EditPosts() {
+
     let navigate = useNavigate();
-    const currentDateTime = new Date().toLocaleString();
-    let param =useParams();
+
+    let param = useParams()
     const [seachById, setSeachById] = useState(null)
 
     useEffect(() => {
         const getId = async () => {
             let rs = await postsService.findById(param.id)
             setSeachById(rs.data)
+            console.log(rs)
         }
         getId()
     }, [param.id])
@@ -25,20 +27,19 @@ export function EditPosts() {
         <div>
             <h1>Edit</h1>
             <Formik initialValues={{
+                id: seachById.id,
                 title: seachById.title,
-                category: seachById.category,
                 content: seachById.content,
-                // slug: slugify(title, {lower: true, strict: true}),
-                updatedAt: seachById.updatedAt
-            }
-            }
+                category: seachById.category,
+                updatedAt: seachById.updatedAt,
+            }}
                     validationSchema={Yup.object({
                         title: Yup.string().required('input title'),
                         category: Yup.string().required('input category'),
                         content: Yup.string().required('input content')
                     })}
                     onSubmit={async (values) => {
-                        await postsService.save(values)
+                        await postsService.update(values)
                         alert('thêm mới thành công')
                         navigate('/')
                     }
@@ -59,7 +60,7 @@ export function EditPosts() {
                         <Field type='text' name='content'/>
                         <ErrorMessage name='content'/>
                     </div>
-                    <button type='submit'>Create</button>
+                    <button type='submit'>Edit</button>
                 </Form>
 
             </Formik>

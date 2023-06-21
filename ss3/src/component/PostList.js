@@ -45,7 +45,7 @@ function PostList() {
                             <td>{value.category}</td>
                             <td>{value.updatedAt}</td>
                             <td>
-                                <NavLink to='edit' className='btn btn-primary'>edit</NavLink>
+                                <NavLink to={`/edit/${value.id}`} className='btn btn-primary'>edit</NavLink>
                                 <button type="button" className="btn btn-danger" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal" onClick={() => getDelete(value.id)}>
                                     Delete

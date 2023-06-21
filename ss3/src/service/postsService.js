@@ -24,18 +24,18 @@ export const save = async (posts) => {
     }
 }
 
-export const findById =async (id) =>{
+export const findById = async (id) => {
     try {
-        return  await axios.get(`http://localhost:8080/posts/${id}`);
-    }catch (e){
+        return await axios.get(`http://localhost:8080/posts/${id}`);
+    } catch (e) {
         console.log(e)
     }
 }
 
-export const update=async (posts)=>{
+export const update = async (posts) => {
     try {
         await axios.put(`http://localhost:8080/posts/${posts.id}`, {...posts})
-    }catch (e){
+    } catch (e) {
         console.log(e)
     }
 }
