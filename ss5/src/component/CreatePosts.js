@@ -26,7 +26,7 @@ export function CreatePosts() {
                     })}
                     onSubmit={async (values) => {
                         await postsService.save(values)
-                        alert('create thành công')
+                        alert('create success')
                         navigate('/')
                     }
                     }>

@@ -39,7 +39,7 @@ export function EditPosts() {
                     })}
                     onSubmit={async (values) => {
                         await postsService.save(values)
-                        alert('create thành công')
+                        alert('update success')
                         navigate('/')
                     }
                     }>
