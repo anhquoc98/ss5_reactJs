@@ -3,6 +3,7 @@ import {ErrorMessage, Field, Form, Formik} from "formik";
 import {useNavigate} from "react-router-dom";
 import * as postsService from "../service/postsService";
 import * as Yup from "yup";
+import slugify from "slugify";
 
 export function CreatePosts() {
     let navigate = useNavigate();
@@ -25,29 +26,28 @@ export function CreatePosts() {
                     })}
                     onSubmit={async (values) => {
                         await postsService.save(values)
-                        alert('thêm mới thành công')
+                        alert('update thành công')
                         navigate('/')
                     }
                     }>
                 <Form>
-                    <div>
+                    <div  className="mb-3">
                         <label>Title</label>
-                        <Field type='text' name='title'/>
+                        <Field className="form-control" type='text' name='title'/>
                         <ErrorMessage name='title'/>
                     </div>
-                    <div>
+                    <div className="mb-3">
                         <label>category</label>
-                        <Field type='text' name='category'/>
-                        <ErrorMessage name='category'/>
+                        <Field type='text' className="form-control" name='category'/>
+                        <ErrorMessage name='category' className='text-danger'/>
                     </div>
-                    <div>
+                    <div className="mb-3">
                         <label>content</label>
-                        <Field type='text' name='content'/>
+                        <Field type='text' className="form-control" name='content'/>
                         <ErrorMessage name='content'/>
                     </div>
                     <button type='submit'>Create</button>
                 </Form>
-
             </Formik>
         </div>
     );

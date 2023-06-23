@@ -45,19 +45,19 @@ export function EditPosts() {
                     }
                     }>
                 <Form>
-                    <div>
+                    <div className="mb-3">
                         <label>Title</label>
-                        <Field type='text' name='title'/>
+                        <Field  className="form-control" type='text' name='title'/>
                         <ErrorMessage name='title'/>
                     </div>
-                    <div>
+                    <div className="mb-3">
                         <label>category</label>
-                        <Field type='text' name='category'/>
+                        <Field className="form-control" type='text' name='category'/>
                         <ErrorMessage name='category'/>
                     </div>
-                    <div>
+                    <div className="mb-3">
                         <label>content</label>
-                        <Field type='text' name='content'/>
+                        <Field  className="form-control" type='text' name='content'/>
                         <ErrorMessage name='content'/>
                     </div>
                     <button type='submit'>Edit</button>

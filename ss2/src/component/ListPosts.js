@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
 import {posts} from "../data/posts";
 
 function ListPosts() {
-    const [useList, setUseList] = useState(posts);
 
     return (
         <div>
@@ -16,7 +14,7 @@ function ListPosts() {
                 </tr>
                 </thead>
                 <tbody>
-                {useList.map((value,index)=>(
+                {posts.map((value,index)=>(
                     <tr key={index}>
                         <td>{index +1}</td>
                         <td>{value.title}</td>

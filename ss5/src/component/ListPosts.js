@@ -2,35 +2,36 @@ import React, {useEffect, useState} from 'react';
 import * as postsService from "../service/postsService";
 import {NavLink} from "react-router-dom";
 
-function PostList() {
-    const [postList, setPostList] = useState([])
-    const [idDelete, setPostDelete] = useState(null)
+function ListPosts() {
+    const [postsList, setPostsList] = useState([])
     useEffect(() => {
         const list = async () => {
-            let rs = await postsService.findByAll()
-            setPostList(rs.data)
+            let rs = await postsService.findByAll();
+            setPostsList(rs.data)
         }
         list()
-    }, [])
+    }, []);
 
-    function getDelete(id) {
-        setPostDelete(id)
+    const [idDelete, setIdDelete] = useState('')
+
+    function getIdDelete(id) {
+        setIdDelete(id)
     }
 
     async function handleDelete() {
         await postsService.remove(idDelete)
-        alert("successful erasing ")
         let rs = await postsService.findByAll()
-        setPostList(rs.data)
+        setPostsList(rs.data)
     }
 
     return (
         <div>
+            <h2> List posts</h2>
             <NavLink to='/create' className='btn btn-primary'>Create</NavLink>
             <table className='table table-primary'>
                 <thead className='table-danger'>
                 <tr>
-                    <th>id</th>
+                    <th>Id</th>
                     <th>title</th>
                     <th>category</th>
                     <th>time</th>
@@ -38,24 +39,22 @@ function PostList() {
                 </tr>
                 </thead>
                 <tbody>
-                {
-                    postList.map((value, index) => (
-                        <tr key={index}>
-                            <td>{value.id}</td>
-                            <td>{value.title}</td>
-                            <td>{value.category}</td>
-                            <td>{value.updatedAt}</td>
-                            <td>
-                                <NavLink to={`/edit/${value.id}`} className='btn btn-primary'>edit</NavLink>
-                                <button type="button" className="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal" onClick={() => getDelete(value.id)}>
-                                    Delete
-                                </button>
-
-                            </td>
-                        </tr>
-                    ))
-                }
+                {postsList.map((value, index) => (
+                    <tr key={index}>
+                        <td>{value.id}</td>
+                        <td>{value.title}</td>
+                        <td>{value.category}</td>
+                        <td>{value.updatedAt}</td>
+                        <td>
+                            <NavLink to={`/edit/${value.id}`} className='btn btn-primary m-1'>Edit</NavLink>
+                            <NavLink to={`/detail/${value.id}`} className='btn btn-success'>Detail</NavLink>
+                            <button type="button" className="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal" onClick={() => getIdDelete(value.id)}>
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
 
@@ -69,7 +68,7 @@ function PostList() {
                                     aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            Delete {idDelete}
+                            ...
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -81,9 +80,8 @@ function PostList() {
                 </div>
             </div>
 
-
         </div>
     );
 }
 
-export default PostList;
+export default ListPosts;
