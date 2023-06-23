@@ -9,29 +9,28 @@ export function EditPosts() {
     let navigate = useNavigate();
 
     let param = useParams()
-    const [seachById, setSeachById] = useState(null)
+    const [searchById, setSearchById] = useState(null)
 
     useEffect(() => {
         const getId = async () => {
             let rs = await postsService.findById(param.id)
-            setSeachById(rs.data)
+            setSearchById(rs.data)
             console.log(rs)
         }
         getId()
     }, [param.id])
-    if (!seachById) {
+    if (!searchById) {
         return null
     }
-
     return (
         <div>
             <h1>Edit</h1>
             <Formik initialValues={{
-                id: seachById.id,
-                title: seachById.title,
-                content: seachById.content,
-                category: seachById.category,
-                updatedAt: seachById.updatedAt,
+                id: searchById.id,
+                title: searchById.title,
+                content: searchById.content,
+                category: searchById.category,
+                updatedAt: searchById.updatedAt,
             }}
                     validationSchema={Yup.object({
                         title: Yup.string().required('input title'),
@@ -40,7 +39,7 @@ export function EditPosts() {
                     })}
                     onSubmit={async (values) => {
                         await postsService.update(values)
-                        alert('thêm mới thành công')
+                        alert('update success')
                         navigate('/')
                     }
                     }>
@@ -62,7 +61,6 @@ export function EditPosts() {
                     </div>
                     <button type='submit'>Edit</button>
                 </Form>
-
             </Formik>
         </div>
     );

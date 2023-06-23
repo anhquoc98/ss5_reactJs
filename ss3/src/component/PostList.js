@@ -19,7 +19,7 @@ function PostList() {
 
     async function handleDelete() {
         await postsService.remove(idDelete)
-        alert("successful erasing ")
+        alert("successful erasing")
         let rs = await postsService.findByAll()
         setPostList(rs.data)
     }
