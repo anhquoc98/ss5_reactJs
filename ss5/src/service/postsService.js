@@ -8,6 +8,13 @@ export const findByAll = async () => {
     }
 }
 
+export const searchByTitle = async (title) => {
+    try {
+        return await axios.get(` http://localhost:8080/posts?title_like=${title}`)
+    } catch (e) {
+        console.log(e)
+    }
+}
 export const save = async (posts) => {
     try {
         return await axios.post(` http://localhost:8080/posts`,{...posts})

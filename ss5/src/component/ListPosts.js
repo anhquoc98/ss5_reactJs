@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import * as postsService from "../service/postsService";
 import {NavLink} from "react-router-dom";
+import {Field, Form, Formik} from "formik";
+import {searchByTitle} from "../service/postsService";
 
 function ListPosts() {
     const [postsList, setPostsList] = useState([])
+    const [noResults, setNoResults] = useState(false);
+
     useEffect(() => {
         const list = async () => {
             let rs = await postsService.findByAll();
@@ -25,9 +29,35 @@ function ListPosts() {
     }
 
     return (
-        <div>
-            <h2> List posts</h2>
-            <NavLink to='/create' className='btn btn-primary'>Create</NavLink>
+        <>
+
+            <div style={{textAlign: 'center'}}>
+                <h2> List posts</h2>
+            </div>
+            <div className='d-flex'>
+                <Formik initialValues={{
+                    title: ''
+                }}
+                        onSubmit={(values) => {
+                            const findByName = async () => {
+                                let rs = await postsService.searchByTitle(values.title);
+                                setPostsList(rs.data)
+                                if (rs.data.length ===0){
+                                    setNoResults(true);
+                                    setPostsList([])
+                                }
+                            }
+                            findByName()
+                        }}>
+                    <Form>
+                        <Field type='text' name='title' className=''/>
+                        <button type='search' className='btn btn-primary m-1'>Search</button>
+                    </Form>
+                </Formik>
+            </div>
+            <div className='m-3' style={{textAlignLast: 'right', marginRight: "20px"}}>
+                <NavLink to='/create' className='btn btn-primary'>Create</NavLink>
+            </div>
             <table className='table table-primary'>
                 <thead className='table-danger'>
                 <tr>
@@ -39,6 +69,13 @@ function ListPosts() {
                 </tr>
                 </thead>
                 <tbody>
+                {noResults ? (
+                    <p>Không có kết quả nào có tiêu đề như vậy.</p>
+                ) : (
+                    <table>
+                        {/* Render table rows based on the postsList */}
+                    </table>
+                )}
                 {postsList.map((value, index) => (
                     <tr key={index}>
                         <td>{value.id}</td>
@@ -47,7 +84,7 @@ function ListPosts() {
                         <td>{value.updatedAt}</td>
                         <td>
                             <NavLink to={`/edit/${value.id}`} className='btn btn-primary m-1'>Edit</NavLink>
-                            <NavLink to={`/detail/${value.id}`} className='btn btn-success'>Detail</NavLink>
+                            <NavLink to={`/detail/${value.id}`} className='btn btn-success m-1'>Detail</NavLink>
                             <button type="button" className="btn btn-danger" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal" onClick={() => getIdDelete(value.id)}>
                                 Delete
@@ -80,7 +117,7 @@ function ListPosts() {
                 </div>
             </div>
 
-        </div>
+        </>
     );
 }
 
