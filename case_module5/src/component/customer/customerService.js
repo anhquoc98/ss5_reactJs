@@ -51,7 +51,7 @@ export const update = async(facility)=>{
 
 export const remove = async(id) =>{
     try {
-        await axios.delete(`http://localhost:8080/customerList${id}`)
+        return await axios.delete(`http://localhost:8080/customerList/${id}`)
     } catch (error) {
         console.log(error)
     }

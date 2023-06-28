@@ -8,6 +8,7 @@ import FuramaList from "./component/serviceFurama/FuramaList";
 import CreateFurama from "./component/serviceFurama/CreateFurama";
 import CustomerList from "./component/customer/CustomerList";
 import CustomerCreate from "./component/customer/CustomerCreate";
+import EditFurama from "./component/serviceFurama/EditFurama";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/listService' element={<FuramaList/>}/>
                 <Route path='/createFurama' element={<CreateFurama/>}/>
+                <Route path='/editFurama' element={<EditFurama/>}/>
                 <Route path='/customer' element={<CustomerList/>}/>
                 <Route path='/createCustomer' element={<CustomerCreate/>}/>
             </Routes>

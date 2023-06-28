@@ -5,16 +5,16 @@ import * as postsService from "../service/postsService";
 function DetailPosts(props) {
     let param = useParams();
 
-    const [searchById, setSearchById] = useState(null)
+    const [postById, setPostById] = useState(null)
     useEffect(() => {
         const update = async () => {
             let rs = await postsService.searchById(param.id)
             console.log(rs.data)
-            setSearchById(rs.data)
+            setPostById(rs.data)
         }
         update()
     }, [param.id]);
-    if (!searchById) {
+    if (!postById) {
         return null
     }
     return (
@@ -24,29 +24,29 @@ function DetailPosts(props) {
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>{searchById.id}</th>
+                    <th>{postById.id}</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                     <th>category</th>
-                    <th>{searchById.category}</th>
+                    <th>{postById.category}</th>
                 </tr>
                 <tr>
                     <th>title</th>
-                    <th>{searchById.title}</th>
+                    <th>{postById.title}</th>
                 </tr>
                 <tr>
                     <th>content</th>
-                    <th>{searchById.content}</th>
+                    <th>{postById.content}</th>
                 </tr>
                 <tr>
                     <th>slug</th>
-                    <th>{searchById.slug}</th>
+                    <th>{postById.slug}</th>
                 </tr>
                 <tr>
                     <th>time</th>
-                    <th>{searchById.updatedAt}</th>
+                    <th>{postById.updatedAt}</th>
                 </tr>
                 </tbody>
             </table>

@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import * as postsService from "../service/postsService";
 import {NavLink} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
-import {searchByTitle} from "../service/postsService";
 
 function ListPosts() {
     const [postsList, setPostsList] = useState([])
@@ -11,6 +10,10 @@ function ListPosts() {
     useEffect(() => {
         const list = async () => {
             let rs = await postsService.findByAll();
+            if (rs.data.length ===0){
+                setNoResults(true);
+                setPostsList([])
+            }
             setPostsList(rs.data)
         }
         list()
@@ -34,7 +37,7 @@ function ListPosts() {
             <div style={{textAlign: 'center'}}>
                 <h2> List posts</h2>
             </div>
-            <div className='d-flex'>
+            <div className='d-flex' style={{position :"fixed"}}>
                 <Formik initialValues={{
                     title: ''
                 }}
@@ -69,14 +72,11 @@ function ListPosts() {
                 </tr>
                 </thead>
                 <tbody>
-                {noResults ? (
-                    <p>Không có kết quả nào có tiêu đề như vậy.</p>
-                ) : (
-                    <table>
-                        {/* Render table rows based on the postsList */}
-                    </table>
-                )}
-                {postsList.map((value, index) => (
+                {
+                    noResults && ( <h6 style={{textAlign:"center",width:"100%"}}>No post found</h6>)
+                }
+                {
+                    postsList.map((value, index) => (
                     <tr key={index}>
                         <td>{value.id}</td>
                         <td>{value.title}</td>

@@ -8,27 +8,27 @@ export function EditPosts() {
     let navigate = useNavigate();
     let param=useParams();
 
-    const [searchById,setSearchById]=useState(null)
+    const [postsById,setPostsById]=useState(null)
     useEffect( ()=>{
         const update=async ()=>{
             let rs= await postsService.searchById(param.id)
             console.log(rs.data)
-            setSearchById(rs.data)
+            setPostsById(rs.data)
         }
         update()
     },[param.id]);
-    if (!searchById) {
+    if (!postsById) {
         return null
     }
 
     return (
         <div>
             <Formik initialValues={{
-                id:searchById.id,
-                title: searchById.title,
-                content: searchById.content,
-                category: searchById.category,
-                updatedAt: searchById.updatedAt
+                id:postsById.id,
+                title: postsById.title,
+                content: postsById.content,
+                category: postsById.category,
+                updatedAt: postsById.updatedAt
 
 
             }}

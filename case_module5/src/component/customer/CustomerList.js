@@ -23,8 +23,8 @@ function CustomerList() {
         }
         list()
     }, [])
-    const [idDelete, setIdDelete] = useState([])
-    const [nameDelete, setNameDelete] = useState([])
+    const [idDelete, setIdDelete] = useState(null)
+    const [nameDelete, setNameDelete] = useState(null)
 
     function handleIdDelete(id, name) {
         setIdDelete(id)
@@ -33,7 +33,7 @@ function CustomerList() {
 
     async function handleDelete() {
         await customerService.remove(idDelete)
-        alert('xóa thành công')
+        alert('xóa thành công');
         let rs= await customerService.findAll()
         setListCustomer(rs.data)
     }
@@ -72,7 +72,7 @@ function CustomerList() {
                         <tr key={index}>
                             <td>{value.id}</td>
                             <td>{value.name}</td>
-                            <td>{value.gender == "1" ? 'nam' : 'nữ'}</td>
+                            <td>{value.gender === "1" ? 'nam' : 'nữ'}</td>
                             <td>{value.dateOfBirth}</td>
                             <td>{value.cmnd}</td>
                             <td>{value.phone}</td>

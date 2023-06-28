@@ -3,7 +3,7 @@ import {Field, Form, Formik} from "formik";
 import * as furamaService from "./service/furamaService";
 import {useNavigate} from "react-router-dom";
 
-function EditFurama(props) {
+function EditFurama() {
     let navigate=useNavigate()
     return (
         <div>
