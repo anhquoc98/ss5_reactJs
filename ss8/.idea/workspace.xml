@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b6e84c4-738e-43d5-87df-888e1c478a82" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ss7/src/component/CreatePosts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/component/ListPosts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/http-common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/redux/action/posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/redux/action/types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/redux/reducer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/redux/reducer/postsReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/redux/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ss7/src/service/postsService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case_module5/src/component/customer/CustomerEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case_module5/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../case_module5/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case_module5/src/component/customer/CustomerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../case_module5/src/component/customer/CustomerList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case_module5/src/component/customer/customerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../case_module5/src/component/customer/customerService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../case_module5/src/component/serviceFurama/EditFurama.js" beforeDir="false" afterPath="$PROJECT_DIR$/../case_module5/src/component/serviceFurama/EditFurama.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case_module5/src/component/serviceFurama/FuramaList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../case_module5/src/component/serviceFurama/FuramaList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../case_module5/src/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../case_module5/src/data/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss5/src/component/DetailPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/src/component/DetailPosts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ss5/src/component/EditPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/src/component/EditPosts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ss5/src/component/ListPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ss5/src/component/ListPosts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +31,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/codegym/reactJs/ss8",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -54,6 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1687935318125</updated>
       <workItem from="1687935321224" duration="69000" />
+      <workItem from="1687943918409" duration="31000" />
     </task>
     <servers />
   </component>

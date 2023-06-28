@@ -64,6 +64,7 @@ function CustomerList() {
                     <th>email</th>
                     <th>loại khách</th>
                     <th>địa chỉ</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -85,6 +86,7 @@ function CustomerList() {
                                         onClick={() => handleIdDelete(value.id, value.name)}>
                                     Xóa
                                 </button>
+                                <NavLink to={`/editCustomer/${value.id}`} className='btn btn-primary'>Edit</NavLink>
                             </td>
                         </tr>
                     ))

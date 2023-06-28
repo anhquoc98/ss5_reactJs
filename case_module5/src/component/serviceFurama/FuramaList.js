@@ -27,11 +27,17 @@ function FuramaList() {
     return (
         <div>
             <Header/>
-            <NavLink to='/createFurama' className='btn btn-outline-primary'
-                     style={{display: 'flex', justifyContent: 'center', alignItems: 'center', high: '30%'}}>Thêm mới
+            <div style={{position:'fixed', marginTop:'2%',marginLeft:'15%'}}>
+                <label htmlFor="" ><b>Tìm kiếm:</b></label>
+                <input type="text" className='form-text'/>
+            </div>
+            <div style={{textAlignLast:'right',marginRight:'5%', marginTop:'2%'}}>
+                <NavLink to='/createFurama' className='btn btn-primary' style={{textAlignLast:"left"}}
+                >Thêm mới
                 dịch vụ</NavLink>
-            <div className='row '
-                 style={{display: 'flex', justifyContent: 'center', alignItems: 'center', high: '30%',backGround: 'aquamarine'}}>
+            </div>
+            <div className='row'
+                 style={{display: 'flex', justifyContent: 'center', alignItems: 'center', high: '30%',backGround: 'aquamarine', textAlignLast:'center'}}>
                 {furamaList.map((value, index) => (
                     <div className="card m-5 col-2 d-flex" style={{width: '18rem',backGround: 'aquamarine'}}>
                         <div className="card-body">
@@ -42,7 +48,7 @@ function FuramaList() {
                                     facilityList.filter(fl=>fl.id == value.facilitiesType)[0]?.name
                                 }
                             </h4>
-                            <NavLink to="/editFurama" className="btn btn-primary">
+                            <NavLink to="/editFurama" className="btn btn-primary m-2" >
                                 Sửa
                             </NavLink>
                             <button className="btn btn-danger">

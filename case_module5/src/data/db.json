@@ -253,25 +253,25 @@
     },
     {
       "id": 2,
-      "name": "Hà Nguyễn Thanh Phong",
+      "name": "Nguyễn Văn Phong",
       "gender": "1",
       "dateOfBirth": "1998-07-29",
       "cmnd": "201322211",
       "phone": "0909888888",
       "email": "abc123@gmail.com",
       "customerType": 1,
-      "address": "253 Nguyễn Hoàng"
+      "address": "10 Nguyễn Huệ"
     },
     {
       "id": 3,
-      "name": "Dương Minh Trường",
+      "name": "Trần Văn Trường",
       "gender": "1",
       "dateOfBirth": "2023-04-20",
       "cmnd": "201322211",
       "phone": "0909777777",
       "email": "abc123@gmail.com",
       "customerType": 4,
-      "address": "253 Nguyễn Hoàng"
+      "address": "111 Nguyễn Văn Linh"
     },
     {
       "id": 4,
@@ -305,6 +305,18 @@
       "email": "abc@gmail.com",
       "customerType": 2,
       "address": "650 Âu Cơ"
+    },
+    {
+      "name": "Nguyễn Văn Phong",
+      "gender": "1",
+      "dateOfBirth": "1998-07-29",
+      "cmnd": "201322211",
+      "phone": "0909888888",
+      "email": "abc123@gmail.com",
+      "address": "10 Nguyễn Huệ",
+      "customerType": 1,
+      "Cmnd": "312431432",
+      "id": 7
     }
   ],
   "customerTypeList": [

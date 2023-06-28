@@ -9,6 +9,7 @@ import CreateFurama from "./component/serviceFurama/CreateFurama";
 import CustomerList from "./component/customer/CustomerList";
 import CustomerCreate from "./component/customer/CustomerCreate";
 import EditFurama from "./component/serviceFurama/EditFurama";
+import CustomerEdit from "./component/customer/CustomerEdit";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/editFurama' element={<EditFurama/>}/>
                 <Route path='/customer' element={<CustomerList/>}/>
                 <Route path='/createCustomer' element={<CustomerCreate/>}/>
+                <Route path='/editCustomer/:id' element={<CustomerEdit/>}/>
             </Routes>
 
 

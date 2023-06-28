@@ -35,7 +35,7 @@ export const save = async(facility)=>{
 }
 export const findById = async(id) =>{
     try {
-        return (await axios.get(`http://localhost:8080/customerList/${id}`)).data
+        return (await axios.get(`http://localhost:8080/customerList/${id}`))
     } catch (error) {
         console.log(error)
     }

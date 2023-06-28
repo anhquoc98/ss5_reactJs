@@ -12,7 +12,6 @@ function ListPosts() {
             let rs = await postsService.findByAll();
             if (rs.data.length ===0){
                 setNoResults(true);
-                setPostsList([])
             }
             setPostsList(rs.data)
         }
