@@ -317,6 +317,29 @@
       "customerType": 1,
       "Cmnd": "312431432",
       "id": 7
+    },
+    {
+      "name": "Lê Văn Phát Đạt",
+      "gender": "2",
+      "dateOfBirth": "1999-07-01",
+      "cmnd": "201233322",
+      "phone": "0909112112",
+      "email": "abc@gmail.com",
+      "address": "650 Âu Cơ",
+      "customerType": 2,
+      "Cmnd": "ưeiqids",
+      "id": 8
+    },
+    {
+      "name": "Lê Văn Phát Đạt",
+      "gender": "2",
+      "dateOfBirth": "1999-07-01",
+      "cmnd": "201233322",
+      "phone": "0909112112",
+      "email": "abc@gmail.com",
+      "address": "650 Âu Cơ",
+      "customerType": 2,
+      "id": 9
     }
   ],
   "customerTypeList": [

@@ -4,6 +4,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import * as customerService from "./customerService";
 
 function CustomerEdit() {
+    let navigate = useNavigate();
     const [listCustomerType, setListCustomerType] = useState([]);
     let param =useParams()
     const [customerById,setCustomerById]=useState(null)
@@ -25,8 +26,7 @@ function CustomerEdit() {
         return null;
     }
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    let navigate = useNavigate();
+
     return (
 
         <div>
