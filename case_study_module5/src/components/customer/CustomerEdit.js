@@ -73,7 +73,7 @@ export default function CustomerEdit() {
             <Form>
               <div style={{ marginTop: 96, backgroundColor: "rgb(232, 235, 219)" }}>
                 <div className="row mx-0">
-                  <div className="col-6">
+                  <div className="col-6" style={{backgroundColor:'bisque'}}>
                     <div className="text-center fw-bold">
                       <h2>Thêm Mới Khách Hàng</h2>
                     </div>

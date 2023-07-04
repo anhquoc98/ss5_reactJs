@@ -101,11 +101,26 @@ export default function FacilityEdit() {
             }}
                 validationSchema={Yup.object(
                     {
-                        name: Yup.string().required('Không được bỏ trống').matches(/^([a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+)$/,'Tên phải đúng định dạng VD: BIỆT THỰ...'),
-                        area: Yup.string().required('Không được bỏ trống').matches(/^[1-9]\d*$/,'Diệt tích phải là số nguyên dương'),
-                        price: Yup.string().required('Không được bỏ trống').matches(/^[1-9]\d*$/,'Số tiền phải là số nguyên dương'),
+                        name: Yup.string().required('Không được bỏ trống'),
+                        area: Yup.string().required('Không được bỏ trống'),
+                        price: Yup.string().required('Không được bỏ trống'),
                         img: Yup.string().required('Không được bỏ trống'),
-                        people: Yup.string().required('Không được bỏ trống').matches(/^[1-9]\d*$/,'Số lượng người là số nguyên dương'),
+                        people: Yup.string().required('Không được bỏ trống')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        ,
                         description: facility == 'Biệt thự' && Yup.string().required('Không được bỏ trống') || facility == 'Căn hộ' && Yup.string().required('Không được bỏ trống'),
                         poolarea: facility == 'Biệt thự' && Yup.string().required('Không được bỏ trống').matches(/^[1-9]\d*$/,'Số tầng phải là số nguyên dương'),
                         numberFloors: facility == 'Biệt thự' && Yup.string().required('Không được bỏ trống') || facility == 'Căn hộ' && Yup.string().required('Không được bỏ trống'),

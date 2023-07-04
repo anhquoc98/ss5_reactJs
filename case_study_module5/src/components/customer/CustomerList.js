@@ -17,9 +17,10 @@ export default function CustomerList() {
     fetchApi()
   }, [])
 
-  
+    const [pageCount,setPageCount] = useState(0)
 
-  const [customers, setCustomers] = useState([])
+
+    const [customers, setCustomers] = useState([])
   const findAll = async () => {
     const rs = await customerList.findByName("",1)
     setCustomers(rs)
@@ -39,7 +40,6 @@ export default function CustomerList() {
     setDeleteName(name)
   }
 
-  const [pageCount,setPageCount] = useState(0)
 
   const handlePageClick = async(page)=>{
     let currentPage = page.selected+1
@@ -50,16 +50,16 @@ export default function CustomerList() {
   
   return (
     <>
-      <div className="row mx-0" style={{ marginTop: 96 }}>
-        <img
-          className="img-fluid px-0"
-          style={{ height: 400 }}
-          src="https://blog.topcv.vn/wp-content/uploads/2017/11/ks.jpg"
-          alt=""
-        />
-      </div>
-      <div>
-        <h2 className="text-center fw-bold pt-4">
+      {/*<div className="row mx-0" style={{ marginTop: 96 }}>*/}
+      {/*  <img*/}
+      {/*    className="img-fluid px-0"*/}
+      {/*    style={{ height: 400 }}*/}
+      {/*    src="https://blog.topcv.vn/wp-content/uploads/2017/11/ks.jpg"*/}
+      {/*    alt=""*/}
+      {/*  />*/}
+      {/*</div>*/}
+      <div style={{marginTop:'96px'}}>
+        <h2 className="text-center fw-bold pt-4 m-5" >
           Danh Sách Tất Cả Các Khách Hàng
         </h2>
       </div>
@@ -103,7 +103,7 @@ export default function CustomerList() {
       </div>
       
       <div className="row mx-0 mt-3 px-5 py-1">
-        <table className="table table-striped" style={customers == '' ? { display: 'none' } : {}}>
+        <table className="table table-warning" style={customers == '' ? { display: 'none' } : {}}>
           <thead className="table-primary">
             <tr>
               <th>STT</th>
@@ -135,7 +135,7 @@ export default function CustomerList() {
                   ))[0]?.name}</td>
                   <td>{customer.address}</td>
                   <td>
-                    <NavLink className="btn btn-primary" to={`/customer-edit/${customer.id}`}><i className="ti-pencil-alt" /></NavLink>
+                    <NavLink className="btn btn-info" to={`/customer-edit/${customer.id}`}><i className="ti-pencil-alt" /></NavLink>
                   </td>
                   <td>
                     <button

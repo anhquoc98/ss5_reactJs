@@ -3,6 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup";
 import * as postsService from "../service/postsService";
+import {toast} from "react-toastify";
 
 export function CreatePosts() {
     let navigate = useNavigate()
@@ -26,7 +27,7 @@ export function CreatePosts() {
                     })}
                     onSubmit={async (values) => {
                         await postsService.save(values)
-                        alert('create success')
+                        toast('create success')
                         navigate('/')
                     }
                     }>

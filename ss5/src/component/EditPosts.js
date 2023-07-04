@@ -3,6 +3,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as Yup from "yup";
 import * as postsService from "../service/postsService";
+import {toast} from "react-toastify";
 
 export function EditPosts() {
     let navigate = useNavigate();
@@ -14,6 +15,7 @@ export function EditPosts() {
             let rs= await postsService.searchById(param.id)
             console.log(rs.data)
             setPostsById(rs.data)
+            toast("OK")
         }
         update()
     },[param.id]);
@@ -39,6 +41,7 @@ export function EditPosts() {
                     })}
                     onSubmit={async (values) => {
                         await postsService.save(values)
+                        toast('update success')
                         alert('update success')
                         navigate('/')
                     }
@@ -62,6 +65,7 @@ export function EditPosts() {
                     <button className='btn btn-primary'> Update</button>
                 </Form>
             </Formik>
+
         </div>
     );
 }

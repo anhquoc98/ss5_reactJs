@@ -123,30 +123,6 @@ export default function FacilityCreate() {
                                     </div>
                                     }
                                     
-                                    <div className="dropdown text-center mt-3" style={{ paddingRight: 360 }}>
-                                        <button
-                                            className="btn btn-secondary dropdown-toggle"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded="false"
-                                        >
-                                            Danh sách cơ sở
-                                        </button>
-                                        <ul className="dropdown-menu">
-                                            {
-                                                facilitiesType.map((facilities, index) => (
-                                                    <li key={index}>
-                                                        <Field component="a" name="facilitiesType" value={facilities.id} className="dropdown-item" onClick={() => {
-                                                            setFacility(facilities.name)
-                                                        }}>
-                                                            {facilities.name}
-                                                        </Field>
-                                                    </li>
-                                                )
-                                                )
-                                            }
-                                        </ul>
-                                    </div>
                                     <div className="d-flex justify-content-center mt-3">
                                         <table className="" style={{ width: 500 }}>
                                             <tbody>
@@ -415,7 +391,7 @@ export default function FacilityCreate() {
                                                         <Field component="select" multiple name="facilityService" className="form-select" id="floatingSelect" aria-label="Floating label select example" size={3}>
                                                             {
                                                                 facilityService.map((facilityServices) => (
-                                                                    <option key={facilityServices.id} value={facilityServices.id}>{facilityServices.name}</option>
+                                                                    <Field type='checkbot' key={facilityServices.id} value={facilityServices.id}>{facilityServices.name}</Field>
                                                                 ))
                                                             }
                                                         </Field>

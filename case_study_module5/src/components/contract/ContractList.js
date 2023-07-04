@@ -51,8 +51,6 @@ export default function ContractList() {
     const [nameDelete,setNameDelete] = useState('')
 
     const getPropsContract = (id,name)=>{
-        console.log(id);
-        console.log(name);
         setIdDelete(id)
         setNameDelete(name)
     }
@@ -68,15 +66,15 @@ export default function ContractList() {
     
     return (
         <>
-            <div className="row mx-0" style={{ marginTop: 96 }}>
-                <img
-                    className="img-fluid px-0"
-                    style={{ height: 400 }}
-                    src="https://cafebatdongsan.com.vn/uploads/image/images/furama-ariyana-condotel-da-nang.jpg"
-                    alt=""
-                />
-            </div>
-            <div>
+            {/*<div className="row mx-0" style={{ marginTop: 96 }}>*/}
+            {/*    <img*/}
+            {/*        className="img-fluid px-0"*/}
+            {/*        style={{ height: 400 }}*/}
+            {/*        src="https://cafebatdongsan.com.vn/uploads/image/images/furama-ariyana-condotel-da-nang.jpg"*/}
+            {/*        alt=""*/}
+            {/*    />*/}
+            {/*</div>*/}
+            <div style={{marginTop:'96px'}}>
                 <h2 className="text-center fw-bold pt-4">Danh Sách Tất Cả Các Hợp Đồng</h2>
             </div>
             <div className='container'>
@@ -121,7 +119,7 @@ export default function ContractList() {
 
 
             <div className="row mx-0 mt-3 px-5 py-1">
-                <table className="table table-striped" style={contractList == '' ? { display: 'none' } : {}}>
+                <table className="table table-warning" style={contractList == '' ? { display: 'none' } : {}}>
                     <thead className="table-primary">
                         <tr>
                             <th>STT</th>
@@ -192,7 +190,7 @@ export default function ContractList() {
                 <div><h4 id="empty" className="text-danger text-center"></h4></div>
             </div>
             </div>
-            <ModalDeleteContract 
+            <ModalDeleteContract
                 id={idDelete}
                 name={nameDelete}
                 getList={()=>{

@@ -1,0 +1,28 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "nameProduct": "Iphone 7",
+      "price": 100,
+      "typeProduct": 1
+    },
+    {
+      "id": 2,
+      "nameProduct": "Iphone 7",
+      "price": 100,
+      "typeProduct": 1
+    },
+    {
+      "id": 3,
+      "nameProduct": "Iphone 7",
+      "price": 100,
+      "typeProduct": 1
+    }
+  ],
+  "typeProduct": [
+    {
+      "id": 1,
+      "nameType": "IPhone"
+    }
+  ]
+}

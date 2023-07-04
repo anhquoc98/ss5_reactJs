@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-      <footer className="container-fluid p-0" style={{ position: "relative" }}>
+      <footer className="container-fluid p-0" style={{ position: "relative" ,height:'8%'}}>
         <div
             className="text-white text-center text-lg-start"
             style={{ background: "#8f972587" }}

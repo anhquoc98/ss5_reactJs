@@ -1,0 +1,127 @@
+{
+  "typeProduct": [
+    {
+      "id": 1,
+      "nameType": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "nameType": "Laptop"
+    }
+  ],
+  "product": [
+    {
+      "idProduct": 1,
+      "nameProduct": "Iphone X",
+      "price": 10000,
+      "typeProduct": 1
+    },
+    {
+      "idProduct": 2,
+      "nameProduct": "Oppo F10",
+      "price": 1200,
+      "typeProduct": 1
+    }
+  ],
+  "donHang": [
+    {
+      "id": 1,
+      "codeDonHang": 200,
+      "date": "10/03/2022",
+      "quantity": 1,
+      "sum": 1000,
+      "productId": 1,
+      "typeProduct": 1
+    },
+    {
+      "id": 2,
+      "codeDonHang": "ewqe321",
+      "date": "2023-07-20",
+      "quantity": "1231",
+      "productId": 1,
+      "sum": "1",
+      "typeProduct": 2
+    },
+    {
+      "id": 3,
+      "codeDonHang": "12321",
+      "date": "2023-07-13",
+      "quantity": "3213",
+      "productId": 1,
+      "sum": "1",
+      "typeProduct": 2
+    },
+    {
+      "id": 4,
+      "codeDonHang": "12321",
+      "date": "2023-06-30",
+      "quantity": "3213",
+      "productId": 1,
+      "sum": "1",
+      "typeProduct": "2"
+    },
+    {
+      "id": 5,
+      "codeDonHang": "11111111111",
+      "date": "2023-07-13",
+      "quantity": "1212",
+      "productId": 1,
+      "sum": "1",
+      "typeProduct": "2"
+    },
+    {
+      "id": 7,
+      "codeDonHang": "12312312",
+      "date": "2023-07-21",
+      "quantity": "1234",
+      "productId": "1",
+      "sum": "1",
+      "typeProduct": 2
+    },
+    {
+      "id": 8,
+      "codeDonHang": "12312",
+      "date": "2023-07-20",
+      "quantity": "1234",
+      "productId": "2",
+      "sum": "1",
+      "typeProduct": 2
+    },
+    {
+      "id": 9,
+      "codeDonHang": "21312",
+      "date": "2023-07-14",
+      "quantity": "3213",
+      "productId": "2",
+      "sum": "1",
+      "typeProduct": 2
+    },
+    {
+      "id": 10,
+      "codeDonHang": "12321",
+      "date": "12-12-2022",
+      "quantity": "3213",
+      "productId": 2,
+      "sum": "1",
+      "typeProduct": 2
+    },
+    {
+      "id": 11,
+      "codeDonHang": "12321",
+      "date": "02-7-2023",
+      "quantity": "123",
+      "productId": 2,
+      "sum": "1",
+      "typeProduct": 2
+    },
+    {
+      "id": 13,
+      "codeDonHang": "12321",
+      "date": "2023-07-13",
+      "quantity": "3213",
+      "productId": "1",
+      "sum": "1",
+      "typeProduct": 2
+    }
+  ]
+}

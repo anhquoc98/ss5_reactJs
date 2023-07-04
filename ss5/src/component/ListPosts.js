@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import * as postsService from "../service/postsService";
 import {NavLink} from "react-router-dom";
 import {Field, Form, Formik} from "formik";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ListPosts() {
     const [postsList, setPostsList] = useState([])
@@ -28,6 +30,7 @@ function ListPosts() {
         await postsService.remove(idDelete)
         let rs = await postsService.findByAll()
         setPostsList(rs.data)
+        toast("Oke")
     }
 
     return (
@@ -115,7 +118,7 @@ function ListPosts() {
                     </div>
                 </div>
             </div>
-
+            <ToastContainer/>
         </>
     );
 }

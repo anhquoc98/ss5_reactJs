@@ -37,7 +37,7 @@ export default function ContractCreate() {
         <>{console.log(facilitiesList[0]?.id)}
             <Formik initialValues={{
                 contractCode: '',
-                customerInfo: customerList[0]?.id,
+                customerInfo:'',
                 facilityInfo: facilitiesList[0]?.id,
                 dateStart: '',
                 dateEnd: '',
@@ -49,11 +49,11 @@ export default function ContractCreate() {
             
                 validationSchema={Yup.object(
                     {
-                        contractCode: Yup.string().required('Không được bỏ trống').matches(/^SV-[0-9]{4}$/,'MHĐ phải đúng định dạng VD: SV-XXXX (X là chữ số)'),
+                        contractCode: Yup.string().required('Không được bỏ trống'),
                         dateStart: Yup.string().required('Không được bỏ trống'),
                         dateEnd: Yup.string().required('Không được bỏ trống'),
-                        price: Yup.string().required('Không được bỏ trống').matches(/^[1-9]\d*$/,'Số tiền phải là số nguyên dương'),
-                        totalPrice: Yup.string().required('Không được bỏ trống').matches(/^[1-9]\d*$/,'Số tiền phải là số nguyên dương'),
+                        price: Yup.string().required('Không được bỏ trống'),
+                        totalPrice: Yup.string().required('Không được bỏ trống').min(0,'lớn hơn 0'),
                     }
                 )}  
                 onSubmit={(value,{ setSubmitting })=>{
@@ -72,8 +72,8 @@ export default function ContractCreate() {
                         <Form>
                         <div style={{ marginTop: 96, backgroundColor: "rgb(232, 235, 219)" }}>
                         <div className="row mx-0">
-                            <div className="col-6">
-                                <div className="text-center fw-bold">
+                            <div className="col-6" style={{backgroundColor:'bisque'}}>
+                                <div className="text-center fw-bold" style={{marginTop:'10px'}}>
                                     <h2>Thêm Mới Hợp Đồng</h2>
                                 </div>
                                 <div className="d-flex justify-content-center mt-3">
@@ -105,15 +105,16 @@ export default function ContractCreate() {
                                                     </label>
                                                 </th>
                                                 <td>
-                                                    <Field component="select" name="customerInfo" className="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                                        {
-                                                            customerList.map((customers) => (
-                                                                <>
-                                                                    <option value={customers.id}>{customers.name}</option>
-                                                                </>
-                                                            ))
-                                                        }
-                                                    </Field>
+                                                    <Field type='text' name='customerInfo' className='form-control' placeholder="Nhập Tên Khách Hàng"/>
+                                                    {/*<Field component="select" name="customerInfo" className="form-select" id="floatingSelect" aria-label="Floating label select example">*/}
+                                                    {/*    {*/}
+                                                    {/*        customerList.map((customers) => (*/}
+                                                    {/*            <>*/}
+                                                    {/*                <option value={customers.id}>{customers.name}</option>*/}
+                                                    {/*            </>*/}
+                                                    {/*        ))*/}
+                                                    {/*    }*/}
+                                                    {/*</Field>*/}
                                                 </td>
                                             </tr>
                                             <tr style={{ height: 60 }}>

@@ -44,16 +44,16 @@ export default function FacilityList() {
     // }
     return (
         <>
-            <div className="row mx-0" style={{ marginTop: 96 }}>
-                <img
-                    className="img-fluid px-0"
-                    style={{ height: 400 }}
-                    src="https://cdn.azvd.asia/images/furama/draf1-2.jpg"
-                    alt=""
-                />
-            </div>
+            {/*<div className="row mx-0" style={{ marginTop: 96 }}>*/}
+            {/*    <img*/}
+            {/*        className="img-fluid px-0"*/}
+            {/*        style={{ height: 400 }}*/}
+            {/*        src="https://cdn.azvd.asia/images/furama/draf1-2.jpg"*/}
+            {/*        alt=""*/}
+            {/*    />*/}
+            {/*</div>*/}
             <div>
-                <h2 className="text-center fw-bold pt-4">Danh Sách Tất Cả Các Dịch Vụ</h2>
+                <h2 className="text-center fw-bold pt-4" style={{marginTop:'96px'}}>Danh Sách Tất Cả Các Dịch Vụ</h2>
             </div>
             <div>
                 <NavLink className="btn btn-dark" style={{ marginLeft: 120 }} to='/facility-create'>
@@ -105,7 +105,7 @@ export default function FacilityList() {
                                     className="card-img-top w-100 h-100"
                                     alt="..."
                                 />
-                                <div className="card-body">
+                                <div className="card-body" style={{backgroundColor:"burlywood"}}>
                                     <h5 className="card-title">{facilities.name}</h5>
                                     <p className="card-text">Diện tích phòng: {facilities.area} </p>
                                     <NavLink to={`/facility-edit/${facilities.id}`} className="btn btn-primary"><i className="ti-pencil-alt"></i></NavLink>
@@ -117,7 +117,7 @@ export default function FacilityList() {
                         </div>
                     ))
                 }
-                <ReactPaginate 
+                <ReactPaginate
                 previousLabel={'Trước'}
                 nextLabel={'Sau'}
                 pageCount={pageCount}
@@ -130,6 +130,7 @@ export default function FacilityList() {
                 nextClassName="page-item"
                 nextLinkClassName="page-link"
                 activeClassName="active"
+                style='backgroundColor: darkgrey'
                 />
                 <ToastContainer
                     position="top-right"

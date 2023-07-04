@@ -41,9 +41,6 @@
   background-size: cover;
 
 }
-
-
-
 .first {
   margin-top: 40px;
   margin-bottom: 50px;
@@ -155,6 +152,8 @@
   color: #fff;
   padding-bottom: 0.5em;
 }
+
+
 
 
 .third h4::after {

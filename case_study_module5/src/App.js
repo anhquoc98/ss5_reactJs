@@ -16,29 +16,35 @@ import Scroll from './components/Scroll';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
-  
+  const backgroundImage='https://wallpaperaccess.com/full/2690586.jpg'
+
   return (
-    <>
-      <BrowserRouter>
-      <Scroll />
-      <Header />
+
+      <div style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+      }}>
+        <Scroll/>
+
+
+        <Header />
         <Routes>
           <Route>
-          <Route path='/' element={<Home />} />
-          <Route path='/facility-list' element={<FacilityList />} />
-          <Route path='/customer-list' element={<CustomerList />} />
-          <Route path='/contract-list' element={<ContractList />} />
-          <Route path='/facility-detail/:id' element={<Detail />} />
-          <Route path='/facility-create' element={<FacilityCreate />} />
-          <Route path='/facility-edit/:id' element={<FacilityEdit />} />
-          <Route path='/customer-create' element={<CustomerCreate />} />
-          <Route path='/customer-edit/:id' element={<CustomerEdit />} />
-          <Route path='/contract-create' element={<ContractCreate />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/facility-list' element={<FacilityList />} />
+            <Route path='/customer-list' element={<CustomerList />} />
+            <Route path='/contract-list' element={<ContractList />} />
+            <Route path='/facility-detail/:id' element={<Detail />} />
+            <Route path='/facility-create' element={<FacilityCreate />} />
+            <Route path='/facility-edit/:id' element={<FacilityEdit />} />
+            <Route path='/customer-create' element={<CustomerCreate />} />
+            <Route path='/customer-edit/:id' element={<CustomerEdit />} />
+            <Route path='/contract-create' element={<ContractCreate />} />
           </Route>
         </Routes>
         <Footer />
-      </BrowserRouter>
-    </>
+</div>
   );
 }
 

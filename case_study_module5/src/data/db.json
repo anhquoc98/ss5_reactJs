@@ -161,10 +161,10 @@
       "rentType": "2",
       "img": "https://file4.batdongsan.com.vn/resize/745x510/2019/10/01/20191001164854-ce98_wm.jpg",
       "people": "4",
-      "facilitiesType": 3,
+      "facilitiesType": "1",
       "standard": "2",
       "description": "Đầy đủ tiện nghi",
-      "poolarea": null,
+      "poolarea": "100",
       "numberFloors": "15",
       "serviceFree": "",
       "facilityService": [
@@ -263,18 +263,18 @@
     },
     {
       "id": 3,
-      "name": "Dương Minh Trường",
+      "name": "Trần Văn Dương",
       "gender": "1",
       "dateOfBirth": "2023-04-20",
       "cmnd": "201322211",
       "phone": "0909777777",
       "email": "abc123@gmail.com",
       "customerType": "4",
-      "address": "253 Nguyễn Hoàng"
+      "address": "11 Nguyễn Văn Linh"
     },
     {
       "id": 4,
-      "name": "Lê Đức Nghĩa",
+      "name": "Lê Lai",
       "gender": "1",
       "dateOfBirth": "1994-07-22",
       "cmnd": "201322211",
@@ -285,7 +285,7 @@
     },
     {
       "id": 5,
-      "name": "Nguyễn Thanh Tú",
+      "name": "Nguyễn Văn Rô",
       "gender": "1",
       "dateOfBirth": "2023-04-20",
       "cmnd": "345543345",
@@ -296,8 +296,8 @@
     },
     {
       "id": 6,
-      "name": "Lê Văn Phát Đạt",
-      "gender": "1",
+      "name": "Lê Văn KaKa",
+      "gender": "0",
       "dateOfBirth": "1999-07-01",
       "cmnd": "201233322",
       "phone": "0909112112",
